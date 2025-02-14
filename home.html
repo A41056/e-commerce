@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <aside class="promo-bar">
+      <p>Sign up and get 20% off to your first order.</p>
+      <button>Sign Up Now</button>
+    </aside>
+
+    <header>
+      <nav>
+        <ul class="nav_group">
+          <li class="logo">
+            <a href="/" aria-label="Go to homepage">SHOP.CO</a>
+          </li>
+          <li class="nav_links">
+            <ul>
+              <li class="dropdown">
+                <a href="#"
+                  >Shop
+                  <img src="./images/down-arrow.png" alt="Expand shop menu"
+                /></a>
+              </li>
+              <li><a href="#">On Sale</a></li>
+              <li><a href="#">New Arrivals</a></li>
+              <li><a href="#">Brands</a></li>
+            </ul>
+          </li>
+          <li class="search">
+            <form>
+              <button type="submit">
+                <img src="./images/search.png" alt="Search" />
+              </button>
+              <input
+                type="text"
+                id="search"
+                name="q"
+                placeholder="Search for products..."
+              />
+            </form>
+          </li>
+          <li class="user_actions">
+            <a href="/cart" aria-label="View Cart">
+              <img src="./images/cart.png" alt="Cart" />
+            </a>
+            <a href="/account" aria-label="View Account">
+              <img src="./images/person.png" alt="User Account" />
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="slider">
+      <p class="big_text">FIND CLOTHES<br />THAT MATCHES<br />YOUR STYLE</p>
+      <p class="small_text">
+        Browse through our diverse range of meticulously crafted garments,
+        designed <br />to bring out your individuality and cater to your sense
+        of style.
+      </p>
+      <div class="shop_now">
+        <button><p>Shop Now</p></button>
+      </div>
+
+      <div class="numbers">
+        <div class="brands">
+          <p class="intro">200+</p>
+          <p class="small_intro">International Brands</p>
+        </div>
+        <hr />
+        <div class="high-quality-products">
+          <p class="intro">2,000+</p>
+          <p class="small_intro">High-Quality Products</p>
+        </div>
+        <hr />
+        <div class="happy-customer">
+          <p class="intro">30,000+</p>
+          <p class="small_intro">Happy Customers</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <div class="wrapper_container">
+        <img src="./images/versace-logo.png" alt="versace" />
+      </div>
+      <div class="wrapper_container">
+        <img src="./images/zara-logo.png" alt="zara" />
+      </div>
+      <div class="wrapper_container">
+        <img src="./images/gucci-logo.png" alt="gucci" />
+      </div>
+      <div class="wrapper_container">
+        <img src="./images/prada-logo.png" alt="prada" />
+      </div>
+      <div class="wrapper_container">
+        <img src="./images/calvinklein-logo.png" alt="calvin klein" />
+      </div>
+    </div>
+
+    <div class="wrapper_1">
+      <div class="wrapper_2">
+        <div class="wrapper_title">NEW ARRIVALS</div>
+        <div class="product-list" id="new-arrivals"></div>
+      </div>
+
+      <div class="wrapper_2">
+        <div class="wrapper_title">TOP SELLING</div>
+        <div class="product-list" id="top-selling"></div>
+      </div>
+    </div>
+  </body>
+  <script src="product-card.js"></script>
+</html>
