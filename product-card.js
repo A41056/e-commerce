@@ -5,29 +5,29 @@ document.addEventListener("DOMContentLoaded", function () {
         img: "./images/new_arrivals_1.png",
         name: "T-SHIRT WITH TAPE DETAILS",
         rating: 4.5,
-        price: "$120",
+        price: "120",
       },
       {
         img: "./images/new_arrivals_2.png",
         name: "SKINNY FIT JEANS",
         rating: 3.5,
-        price: "$240",
-        originalPrice: "$260",
-        discountPercent: "20%",
+        price: "240",
+        originalPrice: "260",
+        discountPercent: "20",
       },
       {
         img: "./images/new_arrivals_3.png",
         name: "CHECKERED SHIRT",
         rating: 4.5,
-        price: "$180",
+        price: "180",
       },
       {
         img: "./images/new_arrivals_4.png",
         name: "SLEEVE STRIPED T-SHIRT",
         rating: 4.5,
-        price: "$130",
-        originalPrice: "$160",
-        discountPercent: "30%",
+        price: "130",
+        originalPrice: "160",
+        discountPercent: "30",
       },
     ],
     topSelling: [
@@ -35,27 +35,27 @@ document.addEventListener("DOMContentLoaded", function () {
         img: "./images/top_selling_1.png",
         name: "VERTICAL STRIPED SHIRT",
         rating: 5.0,
-        price: "$232",
-        originalPrice: "$212",
-        discountPercent: "20%",
+        price: "232",
+        originalPrice: "212",
+        discountPercent: "20",
       },
       {
         img: "./images/top_selling_2.png",
         name: "COURAGE GRAPHIC T-SHIRT",
         rating: 4.0,
-        price: "$145",
+        price: "145",
       },
       {
         img: "./images/top_selling_3.png",
         name: "LOOSE FIT BERMUDA SHORTS",
         rating: 3.0,
-        price: "$80",
+        price: "80",
       },
       {
         img: "./images/top_selling_4.png",
         name: "FADED SKINNY JEANS",
         rating: 4.5,
-        price: "$210",
+        price: "210",
       },
     ],
   };
@@ -65,13 +65,19 @@ document.addEventListener("DOMContentLoaded", function () {
     card.classList.add("product-card");
 
     // Ảnh sản phẩm
+    const imgContainer = document.createElement("div");
+    imgContainer.classList.add("product-image");
+
     const img = document.createElement("img");
     img.src = product.img;
     img.alt = product.name;
-    card.appendChild(img);
+
+    imgContainer.appendChild(img);
+    card.appendChild(imgContainer);
 
     // Tên sản phẩm
     const name = document.createElement("p");
+    name.classList.add("product-name");
     name.textContent = product.name;
     card.appendChild(name);
 
@@ -79,49 +85,51 @@ document.addEventListener("DOMContentLoaded", function () {
     const ratingContainer = document.createElement("div");
     ratingContainer.classList.add("product-rating");
 
+    const starsContainer = document.createElement("div");
+    starsContainer.classList.add("stars");
+
     for (let i = 0; i < 5; i++) {
-      const star = document.createElement("img");
-      star.src =
-        i < Math.floor(product.rating)
-          ? "./images/star-filled.png"
-          : "./images/star-empty.png";
-      ratingContainer.appendChild(star);
+        const star = document.createElement("img");
+        star.src = i < Math.floor(product.rating)
+            ? "./images/star.png"
+            : "./images/star.png";
+        star.alt = "star";
+        starsContainer.appendChild(star);
     }
 
     const ratingText = document.createElement("span");
     ratingText.textContent = `${product.rating} / 5`;
-    ratingContainer.appendChild(ratingText);
 
+    ratingContainer.appendChild(starsContainer);
+    ratingContainer.appendChild(ratingText);
     card.appendChild(ratingContainer);
 
     // Giá sản phẩm
     const priceContainer = document.createElement("div");
     priceContainer.classList.add("product-pricing");
 
-    // Giá sau giảm
     const discountPrice = document.createElement("span");
     discountPrice.classList.add("discount-price");
-    discountPrice.textContent = product.price;
+    discountPrice.textContent = `$${product.price}`;
     priceContainer.appendChild(discountPrice);
 
-    // Chỉ hiển thị giá gốc và phần trăm giảm giá nếu có giảm giá
     if (product.originalPrice && product.discountPercent) {
-      const originalPrice = document.createElement("span");
-      originalPrice.classList.add("original-price");
-      originalPrice.textContent = product.originalPrice;
+        const originalPrice = document.createElement("span");
+        originalPrice.classList.add("original-price");
+        originalPrice.textContent = `$${product.originalPrice}`;
 
-      const discountPercent = document.createElement("span");
-      discountPercent.classList.add("discount-percent");
-      discountPercent.textContent = `-${product.discountPercent}`;
+        const discountPercent = document.createElement("span");
+        discountPercent.classList.add("discount-percent");
+        discountPercent.textContent = `-${product.discountPercent}%`;
 
-      priceContainer.appendChild(originalPrice);
-      priceContainer.appendChild(discountPercent);
+        priceContainer.appendChild(originalPrice);
+        priceContainer.appendChild(discountPercent);
     }
 
     card.appendChild(priceContainer);
 
     return card;
-  }
+}
 
   function renderProducts(category, containerId) {
     const container = document.getElementById(containerId);
