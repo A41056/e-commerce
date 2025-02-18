@@ -35,8 +35,8 @@ document.addEventListener("DOMContentLoaded", function () {
         img: "./images/top_selling_1.png",
         name: "VERTICAL STRIPED SHIRT",
         rating: 5.0,
-        price: "232",
-        originalPrice: "212",
+        price: "212",
+        originalPrice: "232",
         discountPercent: "20",
       },
       {
@@ -89,12 +89,13 @@ document.addEventListener("DOMContentLoaded", function () {
     starsContainer.classList.add("stars");
 
     for (let i = 0; i < 5; i++) {
-        const star = document.createElement("img");
-        star.src = i < Math.floor(product.rating)
-            ? "./images/star.png"
-            : "./images/star.png";
-        star.alt = "star";
-        starsContainer.appendChild(star);
+      const star = document.createElement("img");
+      star.src =
+        i < Math.floor(product.rating)
+          ? "./images/star.png"
+          : "./images/star.png";
+      star.alt = "star";
+      starsContainer.appendChild(star);
     }
 
     const ratingText = document.createElement("span");
@@ -114,22 +115,22 @@ document.addEventListener("DOMContentLoaded", function () {
     priceContainer.appendChild(discountPrice);
 
     if (product.originalPrice && product.discountPercent) {
-        const originalPrice = document.createElement("span");
-        originalPrice.classList.add("original-price");
-        originalPrice.textContent = `$${product.originalPrice}`;
+      const originalPrice = document.createElement("span");
+      originalPrice.classList.add("original-price");
+      originalPrice.textContent = `$${product.originalPrice}`;
 
-        const discountPercent = document.createElement("span");
-        discountPercent.classList.add("discount-percent");
-        discountPercent.textContent = `-${product.discountPercent}%`;
+      const discountPercent = document.createElement("span");
+      discountPercent.classList.add("discount-percent");
+      discountPercent.textContent = `-${product.discountPercent}%`;
 
-        priceContainer.appendChild(originalPrice);
-        priceContainer.appendChild(discountPercent);
+      priceContainer.appendChild(originalPrice);
+      priceContainer.appendChild(discountPercent);
     }
 
     card.appendChild(priceContainer);
 
     return card;
-}
+  }
 
   function renderProducts(category, containerId) {
     const container = document.getElementById(containerId);
