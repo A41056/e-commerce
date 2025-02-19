@@ -58,13 +58,20 @@ document.addEventListener("DOMContentLoaded", function () {
         price: "210",
       },
     ],
+    detailDemo: [
+      {
+        name: "One Life Graphic T-shirt",
+        rating: 4.5,
+        price: "260",
+        originalPrice: "300",
+        discountPercent: "40",
+      },
+    ],
   };
-
   function createProductCard(product) {
     const card = document.createElement("div");
     card.classList.add("product-card");
 
-    // Ảnh sản phẩm
     const imgContainer = document.createElement("div");
     imgContainer.classList.add("product-image");
 
@@ -75,71 +82,151 @@ document.addEventListener("DOMContentLoaded", function () {
     imgContainer.appendChild(img);
     card.appendChild(imgContainer);
 
-    // Tên sản phẩm
     const name = document.createElement("p");
     name.classList.add("product-name");
     name.textContent = product.name;
     card.appendChild(name);
 
-    // Đánh giá (số sao + điểm số)
+    const ratingElement = createRating(product.rating);
+    card.appendChild(ratingElement);
+
+    const priceElement = createPricing(
+      product.price,
+      product.originalPrice,
+      product.discountPercent
+    );
+    card.appendChild(priceElement);
+
+    return card;
+  }
+
+  function createRating(rating) {
     const ratingContainer = document.createElement("div");
     ratingContainer.classList.add("product-rating");
 
     const starsContainer = document.createElement("div");
     starsContainer.classList.add("stars");
 
+    let hasStar = false;
+
     for (let i = 0; i < 5; i++) {
-      const star = document.createElement("img");
-      star.src =
-        i < Math.floor(product.rating)
-          ? "./images/star.png"
-          : "./images/star.png";
-      star.alt = "star";
-      starsContainer.appendChild(star);
+      if (i < Math.floor(rating)) {
+        const star = document.createElement("img");
+        star.src = "./images/star.png";
+        star.alt = "full star";
+        starsContainer.appendChild(star);
+        hasStar = true;
+      } else if (i === Math.floor(rating) && rating % 1 !== 0) {
+        const star = document.createElement("img");
+        star.src = "./images/half-star.png";
+        star.alt = "half star";
+        starsContainer.appendChild(star);
+        hasStar = true;
+      }
+    }
+
+    if (hasStar) {
+      ratingContainer.appendChild(starsContainer);
     }
 
     const ratingText = document.createElement("span");
-    ratingText.textContent = `${product.rating} / 5`;
-
-    ratingContainer.appendChild(starsContainer);
+    ratingText.textContent = `${rating} / 5`;
     ratingContainer.appendChild(ratingText);
-    card.appendChild(ratingContainer);
 
-    // Giá sản phẩm
+    return ratingContainer;
+  }
+
+  function createPricing(price, originalPrice, discountPercent) {
     const priceContainer = document.createElement("div");
     priceContainer.classList.add("product-pricing");
 
     const discountPrice = document.createElement("span");
     discountPrice.classList.add("discount-price");
-    discountPrice.textContent = `$${product.price}`;
+    discountPrice.textContent = `$${price}`;
     priceContainer.appendChild(discountPrice);
 
-    if (product.originalPrice && product.discountPercent) {
-      const originalPrice = document.createElement("span");
-      originalPrice.classList.add("original-price");
-      originalPrice.textContent = `$${product.originalPrice}`;
+    if (originalPrice && discountPercent) {
+      const originalPriceElement = document.createElement("span");
+      originalPriceElement.classList.add("original-price");
+      originalPriceElement.textContent = `$${originalPrice}`;
 
-      const discountPercent = document.createElement("span");
-      discountPercent.classList.add("discount-percent");
-      discountPercent.textContent = `-${product.discountPercent}%`;
+      const discountWrapper = document.createElement("div");
+      discountWrapper.classList.add("discount-wrapper");
 
-      priceContainer.appendChild(originalPrice);
-      priceContainer.appendChild(discountPercent);
+      const discountPercentElement = document.createElement("span");
+      discountPercentElement.classList.add("discount-percent");
+      discountPercentElement.textContent = `-${discountPercent}%`;
+
+      discountWrapper.appendChild(discountPercentElement);
+
+      priceContainer.appendChild(originalPriceElement);
+      priceContainer.appendChild(discountWrapper);
     }
 
-    card.appendChild(priceContainer);
-
-    return card;
+    return priceContainer;
   }
 
   function renderProducts(category, containerId) {
     const container = document.getElementById(containerId);
+    if (!container) return;
     products[category].forEach((product) => {
       const productCard = createProductCard(product);
       container.appendChild(productCard);
     });
   }
 
+  function renderProductDetail(product, containerSelector) {
+    const container = document.querySelector(containerSelector);
+    console.log(container);
+
+    if (!container) return;
+
+    const titleElement = container.querySelector(".title");
+    if (titleElement) {
+      titleElement.textContent = product.name;
+    }
+
+    const ratingContainer = container.querySelector(".rating");
+    if (ratingContainer) {
+      ratingContainer.appendChild(createRating(product.rating));
+    }
+
+    const priceContainer = container.querySelector(".price");
+    if (priceContainer) {
+      priceContainer.appendChild(
+        createPricing(
+          product.price,
+          product.originalPrice,
+          product.discountPercent
+        )
+      );
+    }
+  }
+
   renderProducts("newArrivals", "new-arrivals");
   renderProducts("topSelling", "top-selling");
+  renderProductDetail(products.detailDemo[0], ".product-detail");
+
+  const sizeOptions = document.querySelectorAll(".sizes div");
+
+  sizeOptions.forEach((size) => {
+    size.addEventListener("click", function () {
+      sizeOptions.forEach((s) => s.classList.remove("active"));
+
+      this.classList.add("active");
+    });
+  });
+
+  const buttons = document.querySelectorAll(".tab-button");
+  const panels = document.querySelectorAll(".tab-panel");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      buttons.forEach((btn) => btn.classList.remove("active"));
+      panels.forEach((panel) => panel.classList.remove("active"));
+
+      button.classList.add("active");
+      document.getElementById(button.dataset.tab).classList.add("active");
+    });
+  });
 });

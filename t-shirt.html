@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>T-Shirt</title>
-    <link href="./output.css" rel="stylesheet" />
+    <link href="./style.css" rel="stylesheet" />
   </head>
   <body>
     <aside class="promo-bar">
@@ -55,10 +55,10 @@
         </ul>
       </nav>
     </header>
-    <div class="flex flex-col items-center justify-center w-full">
-      <hr class="w-full h-[1px] bg-black/10 border-0" />
+    <div class="container">
+      <hr />
 
-      <ul class="flex items-center self-start navigate-group gap-3 text-[#00000099] cursor-pointer px-[100px] py-[20px]">
+      <ul class="navigate-group">
         <li>
           <a href="/home.html" class="hover:text-black">Home</a>
           <span class="mx-2 text-gray-500">&gt;</span>
@@ -75,20 +75,107 @@
           <a href="#" class="hover:text-black">T-shirts</a>
         </li>
       </ul>
-      
-      <div class="product-details flex items-center self-start container">
+
+      <div class="product-details">
         <div class="product-images">
-          <div class="box1"><img src="/images/product-image-1.png" alt="Image 1"></div>
-          <div class="box2"><img src="/images/product-image-2.png" alt="Image 1"></div>
-          <div class="big-box"><img src="/images/product-image-4.png" alt="Image 1"></div>
-          <div class="box3"><img src="/images/product-image-3.png" alt="Image 1"></div>
+          <div class="box1">
+            <img src="/images/product-image-1.png" alt="Image 1" />
+          </div>
+          <div class="box2">
+            <img src="/images/product-image-2.png" alt="Image 1" />
+          </div>
+          <div class="big-box">
+            <img src="/images/product-image-4.png" alt="Image 1" />
+          </div>
+          <div class="box3">
+            <img src="/images/product-image-3.png" alt="Image 1" />
+          </div>
         </div>
         <div class="product-detail">
           <p class="title">One Life Graphic T-shirt</p>
           <div class="rating"></div>
           <div class="price"></div>
-          <p style="color: #00000099;">This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.</p>
-          <hr>
+          <p class="description">
+            This graphic t-shirt which is perfect for any occasion. Crafted from
+            a soft and breathable fabric, it offers superior comfort and style.
+          </p>
+          <hr />
+          <div class="select-colors">
+            <p style="color: #00000099">Select Colors</p>
+            <div class="colors-group">
+              <div class="color-1" style="background-color: #4f4631"></div>
+              <div class="color-2" style="background-color: #314f4a"></div>
+              <div class="color-3" style="background-color: #31344f"></div>
+            </div>
+          </div>
+          <hr />
+          <div class="choose-size">
+            <p style="color: #00000099">Choose Size</p>
+            <div class="sizes">
+              <div class="size-1">Small</div>
+              <div class="size-2">Medium</div>
+              <div class="size-3">Large</div>
+              <div class="size-4">X-Large</div>
+            </div>
+          </div>
+          <hr />
+          <div class="add-quantity-group">
+            <div class="add-quantity">
+              <button class="minus-button">
+                <img src="./images/minus.png" alt="" />
+              </button>
+              <div class="quantity-number">1</div>
+              <button class="add-button">
+                <img src="./images/add.png" alt="" />
+              </button>
+            </div>
+            <button class="add-to-card">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <button class="tab-button active" data-tab="details">
+          Product Details
+        </button>
+        <button class="tab-button" data-tab="reviews">Rating & Reviews</button>
+        <button class="tab-button" data-tab="faqs">FAQs</button>
+      </div>
+
+      <div class="tab-content">
+        <div class="tab-panel active" id="details">
+          <p>Thông tin chi tiết về sản phẩm...</p>
+        </div>
+        <div class="tab-panel" id="reviews">
+          <div class="all-review-buttons">
+            <div class="all-review-title">
+              <p style="font-size: 24px; font-weight: 700">
+                All Reviews
+                <span
+                  style="font-size: 16px; font-weight: 400; color: #00000099"
+                  >(451)</span
+                >
+              </p>
+            </div>
+
+            <div class="all-review-button">
+              <div class="filter-button">
+                <img src="./images/filter.png" alt="" />
+              </div>
+              <div class="filter-latest">
+                Lastest
+                <img
+                  src="./images/down-arrow.png"
+                  alt=""
+                  style="width: 16px; height: 16px; object-fit: contain"
+                />
+              </div>
+              <div class="write-review-button">Write a Review</div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-panel" id="faqs">
+          <p>Các câu hỏi thường gặp...</p>
         </div>
       </div>
     </div>
@@ -194,4 +281,5 @@
       </div>
     </footer>
   </body>
+  <script src="product-card.js"></script>
 </html>
