@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Casual</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <aside class="promo-bar">
+      <p>Sign up and get 20% off to your first order.</p>
+      <button>Sign Up Now</button>
+    </aside>
+
+    <header>
+      <nav>
+        <ul class="nav_group">
+          <li class="logo">
+            <a href="/home.html" aria-label="Go to homepage">SHOP.CO</a>
+          </li>
+          <li class="nav_links">
+            <ul>
+              <li class="dropdown">
+                <a href="#"
+                  >Shop
+                  <img src="./images/down-arrow.png" alt="Expand shop menu"
+                /></a>
+              </li>
+              <li><a href="#">On Sale</a></li>
+              <li><a href="#">New Arrivals</a></li>
+              <li><a href="#">Brands</a></li>
+            </ul>
+          </li>
+          <li class="search">
+            <form>
+              <button type="submit">
+                <img src="./images/search.png" alt="Search" />
+              </button>
+              <input
+                type="text"
+                id="search"
+                name="q"
+                placeholder="Search for products..."
+              />
+            </form>
+          </li>
+          <li class="user_actions">
+            <a href="/cart" aria-label="View Cart">
+              <img src="./images/cart.png" alt="Cart" />
+            </a>
+            <a href="/account" aria-label="View Account">
+              <img src="./images/person.png" alt="User Account" />
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      <hr />
+
+      <ul class="navigate-group">
+        <li>
+          <a href="/home.html" class="hover:text-black">Home</a>
+          <span class="mx-2 text-gray-500">&gt;</span>
+        </li>
+        <li>
+          <a href="#" class="hover:text-black">Casual</a>
+        </li>
+      </ul>
+
+      <div class="content">
+        <div class="filter">
+          <div class="filter-title">
+            <p style="font-weight: 700; font-size: 20px; line-height: 27px">
+              Filters
+            </p>
+            <div class="filter-image">
+              <img src="./images/gray-filter.png" alt="" />
+            </div>
+          </div>
+
+          <hr />
+
+          <div class="filter-by-type">
+            <div class="t-shirt-type">
+              <p>T-shirts</p>
+              <div class="type-image">
+                <img src="./images/right-nav.png" alt="Nav" />
+              </div>
+            </div>
+            <div class="t-shirt-type">
+              <p>Shorts</p>
+              <div class="type-image">
+                <img src="./images/right-nav.png" alt="Nav" />
+              </div>
+            </div>
+            <div class="t-shirt-type">
+              <p>Shirts</p>
+              <div class="type-image">
+                <img src="./images/right-nav.png" alt="Nav" />
+              </div>
+            </div>
+            <div class="t-shirt-type">
+              <p>Hoodie</p>
+              <div class="type-image">
+                <img src="./images/right-nav.png" alt="Nav" />
+              </div>
+            </div>
+            <div class="t-shirt-type">
+              <p>Jeans</p>
+              <div class="type-image">
+                <img src="./images/right-nav.png" alt="Nav" />
+              </div>
+            </div>
+          </div>
+
+          <hr />
+
+          <div class="filter-by-price">
+            <div class="filter-by-price-title">
+              <p style="font-weight: 700; font-size: 20px; line-height: 27px">
+                Price
+              </p>
+              <div class="filter-image">
+                <img src="./images/up-arrow.png" alt="" />
+              </div>
+            </div>
+
+            <div class="price-slider-container">
+              <div class="price-slider">
+                <div class="slider-track"></div>
+                <input
+                  type="range"
+                  min="0"
+                  max="500"
+                  value="50"
+                  id="minRange"
+                />
+                <input
+                  type="range"
+                  min="0"
+                  max="500"
+                  value="200"
+                  id="maxRange"
+                />
+              </div>
+              <div class="price-values">
+                <span id="minPrice">$50</span>
+                <span id="maxPrice">$200</span>
+              </div>
+            </div>
+          </div>
+
+          <hr />
+
+          <div class="filter-by-color">
+            <div class="filter-by-color-title">
+              <p style="font-weight: 700; font-size: 20px; line-height: 27px">
+                Colors
+              </p>
+              <div class="filter-image">
+                <img src="./images/up-arrow.png" alt="" />
+              </div>
+            </div>
+
+            <div class="filter-by-color-grid"></div>
+          </div>
+
+          <hr />
+
+          <div class="filter-by-size">
+            <div class="filter-by-size-title">
+              <p style="font-weight: 700; font-size: 20px; line-height: 27px">
+                Size
+              </p>
+              <div class="filter-image">
+                <img src="./images/up-arrow.png" alt="" />
+              </div>
+            </div>
+            <div class="size-items">
+              <div class="size-item">
+                <p>XX-Small</p>
+              </div>
+              <div class="size-item">
+                <p>X-Small</p>
+              </div>
+              <div class="size-item">
+                <p>Small</p>
+              </div>
+              <div class="size-item">
+                <p>Medium</p>
+              </div>
+              <div class="size-item">
+                <p>Large</p>
+              </div>
+              <div class="size-item">
+                <p>X-Large</p>
+              </div>
+              <div class="size-item">
+                <p>XX-Large</p>
+              </div>
+              <div class="size-item">
+                <p>3X-Large</p>
+              </div>
+              <div class="size-item">
+                <p>4X-Large</p>
+              </div>
+            </div>
+          </div>
+
+          <hr />
+
+          <div class="filter-by-dress-style">
+            <div class="filter-by-dress-style-title">
+              <p style="font-weight: 700; font-size: 20px; line-height: 27px">
+                Dress Style
+              </p>
+              <div class="filter-image">
+                <img src="./images/up-arrow.png" alt="" />
+              </div>
+            </div>
+            <div class="filter-by-dress-style">
+              <div class="t-shirt-type">
+                <p>Casual</p>
+                <div class="type-image">
+                  <img src="./images/right-nav.png" alt="Nav" />
+                </div>
+              </div>
+              <div class="t-shirt-type">
+                <p>Formal</p>
+                <div class="type-image">
+                  <img src="./images/right-nav.png" alt="Nav" />
+                </div>
+              </div>
+              <div class="t-shirt-type">
+                <p>Party</p>
+                <div class="type-image">
+                  <img src="./images/right-nav.png" alt="Nav" />
+                </div>
+              </div>
+              <div class="t-shirt-type">
+                <p>Gym</p>
+                <div class="type-image">
+                  <img src="./images/right-nav.png" alt="Nav" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="apply-filter">
+            <p>Apply Filter</p>
+          </button>
+        </div>
+        <div class="casual-paging">
+          <div class="casual-paging-title">
+            <p>Casual</p>
+            <div class="sort-by">
+              <p>Showing 1-10 of 100 Products</p>
+              <p>Sort by:</p>
+            </div>
+          </div>
+          <div id="casual-page-product"></div>
+          <hr />
+          <div class="pagination">
+            <button class="page-btn prev"><span>&larr;</span> Previous</button>
+
+            <div class="page-numbers">
+              <span class="page active">1</span>
+              <span class="page">2</span>
+              <span class="page">3</span>
+              <span class="dots">...</span>
+              <span class="page">8</span>
+              <span class="page">9</span>
+              <span class="page">10</span>
+            </div>
+
+            <button class="page-btn next">Next <span>&rarr;</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="newsletter">
+        <div class="newsletter-content">
+          <h2>STAY UP TO DATE ABOUT<br />OUR LATEST OFFERS</h2>
+        </div>
+        <div class="subscribe">
+          <div class="input-container">
+            <img src="images/mail-box.png" alt="Mail Icon" />
+            <input type="email" placeholder="Enter your email address" />
+          </div>
+          <button>Subscribe to Newsletter</button>
+        </div>
+      </div>
+
+      <div class="footer-content">
+        <div class="footer-section about">
+          <h3>SHOP.CO</h3>
+          <p>
+            We have clothes that suit your style and which you're proud to wear.
+            From women to men.
+          </p>
+          <div class="social-icons">
+            <button class="social-icon">
+              <img src="./images/twitter.png" alt="Twitter" />
+            </button>
+            <button class="black-social-icon">
+              <img src="./images/facebook.png" alt="Facebook" />
+            </button>
+            <button class="social-icon">
+              <img src="./images/instagram.png" alt="Instagram" />
+            </button>
+            <button class="social-icon">
+              <img src="./images/github.png" alt="GitHub" />
+            </button>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4>COMPANY</h4>
+          <ul>
+            <li>About</li>
+            <li>Features</li>
+            <li>Works</li>
+            <li>Career</li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>HELP</h4>
+          <ul>
+            <li>Customer Support</li>
+            <li>Delivery Details</li>
+            <li>Terms & Conditions</li>
+            <li>Privacy Policy</li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>FAQ</h4>
+          <ul>
+            <li>Account</li>
+            <li>Manage Deliveries</li>
+            <li>Orders</li>
+            <li>Payments</li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>RESOURCES</h4>
+          <ul>
+            <li>Free eBooks</li>
+            <li>Development Tutorial</li>
+            <li>How to - Blog</li>
+            <li>Youtube Playlist</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>Shop.co © 2000-2023, All Rights Reserved</p>
+        <div class="payment-icons">
+          <button class="payment-icon">
+            <img src="images/visa.png" alt="Visa" />
+          </button>
+          <button class="payment-icon">
+            <img src="images/master-card.png" alt="MasterCard" />
+          </button>
+          <button class="payment-icon">
+            <img src="images/paypal.png" alt="PayPal" />
+          </button>
+          <button class="payment-icon">
+            <img src="images/apple-pay.png" alt="Apple Pay" />
+          </button>
+          <button class="payment-icon">
+            <img src="images/google-pay.png" alt="Google Pay" />
+          </button>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="price-slider.js"></script>
+  <script src="color-generator.js"></script>
+  <script src="product-card.js"></script>
+</html>

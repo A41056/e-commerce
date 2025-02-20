@@ -67,6 +67,100 @@ document.addEventListener("DOMContentLoaded", function () {
         discountPercent: "40",
       },
     ],
+    youMightAlsoLike: [
+      {
+        img: "./images/you-might-also-like-1.png",
+        name: "Polo with Contrast Trims",
+        rating: 4.0,
+        price: "212",
+        originalPrice: "242",
+        discountPercent: "20",
+      },
+      {
+        img: "./images/you-might-also-like-2.png",
+        name: "Gradient Graphic T-shirt",
+        rating: 3.5,
+        price: "145",
+      },
+      {
+        img: "./images/you-might-also-like-3.png",
+        name: "Polo with Tipping Details",
+        rating: 4.5,
+        price: "180",
+      },
+      {
+        img: "./images/you-might-also-like-4.png",
+        name: "Black Striped T-shirt",
+        rating: 5.0,
+        price: "120",
+        originalPrice: "150",
+        discountPercent: "30",
+      },
+    ],
+    casualProduct: [
+      {
+        img: "./images/you-might-also-like-1.png",
+        name: "Gradient Graphic T-shirt",
+        rating: 3.5,
+        price: "145",
+      },
+      {
+        img: "./images/you-might-also-like-2.png",
+        name: "Polo with Tipping Details",
+        rating: 4.5,
+        price: "180",
+      },
+      {
+        img: "./images/you-might-also-like-3.png",
+        name: "Black Striped T-shirt",
+        rating: 5.0,
+        price: "120",
+        originalPrice: "150",
+        discountPercent: "30",
+      },
+      {
+        img: "./images/you-might-also-like-4.png",
+        name: "Skinny Fit Jeans",
+        rating: 3.5,
+        price: "240",
+        originalPrice: "260",
+        discountPercent: "20",
+      },
+      {
+        img: "./images/you-might-also-like-4.png",
+        name: "Checkered Shirt",
+        rating: 4.5,
+        price: "180",
+      },
+      {
+        img: "./images/you-might-also-like-4.png",
+        name: "SLEEVE STRIPED T-SHIRT",
+        rating: 4.5,
+        price: "130",
+        originalPrice: "160",
+        discountPercent: "30",
+      },
+      {
+        img: "./images/you-might-also-like-4.png",
+        name: "VERTICAL STRIPED SHIRT",
+        rating: 5.0,
+        price: "212",
+        originalPrice: "232",
+        discountPercent: "20",
+      },
+      {
+        img: "./images/you-might-also-like-4.png",
+        name: "COURAGE GRAPHIC T-SHIRT",
+        rating: 4.0,
+        price: "145",
+      },
+      {
+        img: "./images/you-might-also-like-4.png",
+        name: "LOOSE FIT BERMUDA SHORTS",
+        rating: 3.0,
+        price: "80",
+      },
+    ],
   };
   function createProductCard(product) {
     const card = document.createElement("div");
@@ -206,6 +300,8 @@ document.addEventListener("DOMContentLoaded", function () {
   renderProducts("newArrivals", "new-arrivals");
   renderProducts("topSelling", "top-selling");
   renderProductDetail(products.detailDemo[0], ".product-detail");
+  renderProducts("youMightAlsoLike", "you-might-also-like");
+  renderProducts("casualProduct", "casual-page-product");
 
   const sizeOptions = document.querySelectorAll(".sizes div");
 
